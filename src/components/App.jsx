@@ -1,16 +1,14 @@
+import { BrowserRouter } from 'react-router-dom';
+
+import Navbar from '../modules/Navbar/Navbar';
+
+import UserRoutes from '../UserRoutes';
+
 export const App = () => {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
+    <BrowserRouter basename="/goit-react-hw-05-movies">
+      <Navbar />
+      <UserRoutes />
+    </BrowserRouter>
   );
 };
