@@ -4,7 +4,7 @@ import TradingTodayList from '../../shared/components/TradingTodayList/TradingTo
 
 import { TradingTodaySearch } from '../../shared/services/posts-api';
 
-// import styles from './trading-today.module.scss';
+import styles from './trading-today.module.scss';
 
 const TradingToday = () => {
   const [items, setItems] = useState([]);
@@ -27,7 +27,13 @@ const TradingToday = () => {
     fetchPosts();
   }, []);
 
-  return <>{<TradingTodayList items={items} />}</>;
+  return (
+    <>
+      {loading && <p> ... loading</p>}
+      {error && <p className={styles.errorMessage}>{error}</p>}
+      {<TradingTodayList items={items} />}
+    </>
+  );
 };
 
 export default TradingToday;

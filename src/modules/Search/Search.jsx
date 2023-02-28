@@ -36,10 +36,13 @@ const Search = () => {
     fetchPosts();
   }, [search]);
 
-  const onsearchPosts = useCallback(({ search }) => {
-    setSearchParams({ search });
-    setItems([]);
-  }, []);
+  const onsearchPosts = useCallback(
+    ({ search }) => {
+      setSearchParams({ search });
+      setItems([]);
+    },
+    [setSearchParams]
+  );
 
   return (
     <>

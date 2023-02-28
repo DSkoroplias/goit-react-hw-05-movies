@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 
 import { getCreditsByMovieId } from '../../shared/services/posts-api';
 
-import styles from './cast-page.module.css';
+import styles from './cast-page.module.scss';
 
 const CastPage = () => {
   const [cast, setCasts] = useState([]);

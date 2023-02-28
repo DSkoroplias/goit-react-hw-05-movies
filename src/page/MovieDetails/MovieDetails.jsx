@@ -10,7 +10,7 @@ import {
 
 import { getMovieById } from '../../shared/services/posts-api';
 
-import styles from './movie-details.module.css';
+import styles from './movie-details.module.scss';
 
 const MovieDetails = () => {
   const [movieDetails, setMovieDetails] = useState();
@@ -29,11 +29,11 @@ const MovieDetails = () => {
       } catch ({ response }) {}
     };
     fetchPost();
-  }, []);
+  }, [id]);
 
   const goBack = useCallback(() => {
     navigate(from);
-  }, [navigate]);
+  }, [navigate, from]);
 
   return (
     <div className={styles.wrapper}>
@@ -44,7 +44,7 @@ const MovieDetails = () => {
         <img
           className={styles.galleryItem_image}
           src={`https://image.tmdb.org/t/p/w185/${movieDetails?.poster_path}`}
-          alt="no photo"
+          alt="poster"
           width="250"
         />
         <section>

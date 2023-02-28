@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 
 import { getReviewsByMovieId } from 'shared/services/posts-api';
 
-import styles from './reviews-page.module.css';
+import styles from './reviews-page.module.scss';
 
 const Reviews = () => {
   const [reviews, setReviews] = useState([]);
